@@ -1,0 +1,27 @@
+# coding: utf-8
+<ul>
+    <% puts "View出力" %>
+<% @items.each do |result| %>
+  <table border="1">
+    <colgroup width="100" />
+    <colgroup width="100" />
+    <colgroup width="100" />
+    <colgroup width="100" />
+    <colgroup width="100" />
+    <colgroup width="100" />
+    <colgroup width="100" />
+
+    <tr>
+      <td><%= result['site'] %></td>
+      <td><%= link_to result['name'], result['url'] %></td>
+      <td><%= result['price'] %> 円</td>
+      <td><img src="<%= result['img_s'] %>" alt="<%= result['name'] %>" /></td>
+      <td><img src="<%= result['img_m'] %>" alt="<%= result['name'] %>" /></td>
+      <td><%= result['rate'] %>（評価人数： <%= result['rateCnt'] %> 人）</td>
+      <td><%= link_to result['shopName'], result['shopUrl'] %></td>
+    </tr>
+
+  </table>
+
+<% end %>
+</ul>

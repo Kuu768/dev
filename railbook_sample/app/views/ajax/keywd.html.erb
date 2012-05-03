@@ -1,0 +1,16 @@
+<%= form_tag({ :action => 'yahoo' }, { :remote => true }) do %>
+  <%= text_field_tag(:keywd, '', { :size => 30 }) %>
+  <%= submit_tag '検索' %>
+<% end %>
+<div id="result"></div>
+
+<form action="post" >
+  
+  
+</form>
+
+<a href="index.html" >test</a>
+
+
+<!-- render(:partial=>'map', :locals=>{:data=>"incidents.xml",
+            :full_page=>true, :show_action=>'show', :new_action=>'new'}) -->

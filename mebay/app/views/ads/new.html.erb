@@ -1,0 +1,17 @@
+<h1>New ad</h1>
+<% form_for(@ad, :url=>{:action=>'create'}) do |f| %>
+  <% if @ad.errors.any? %>
+  <ul>
+    <% @ad.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
+  <% end %>
+<p><b>Name</b><br /><%= f.text_field :name %></p>
+<p><b>Description</b><br /><%= f.text_area :description %></p>
+<p><b>Price</b><br /><%= f.text_field :price %></p>
+<p><b>Seller</b><br /><%= f.text_field :seller_id %></p>
+<p><b>Email</b><br /><%= f.text_field :email %></p>
+<p><b>Imng Url</b><br /><%= f.text_field :img_url %></p>
+<p><%= f.submit "Create" %></p>
+<% end %>

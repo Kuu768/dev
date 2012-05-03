@@ -1,0 +1,12 @@
+#除外対象外
+!/piyo          # 行頭に ! で除外対象としない
+
+#再度除外対象
+/herokuapp  # /herokuapp 以下は除外
+/invest
+/locally
+/refinerycms
+/test2
+/twitterApp
+/twitter_app_bak
+

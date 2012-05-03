@@ -1,0 +1,62 @@
+#yahoo
+<ul>
+<% @body['ResultSet']['Result']['Hit'].each do |result| %>
+  <table border="1">
+    <colgroup width="100" />
+    <colgroup width="300" />
+    <colgroup width="100" />
+    <colgroup width="50" />
+
+    <tr>
+      <td><%= link_to result['Name'], result['Url'] %></td>
+      <td><%= result['Description'] %></td>
+      <td><%= result['Price'] %></td>
+      <img src="<%= result['Image']['Medium'] %>" alt="<%= result['Name'] %>" />
+    </tr>
+  </table>
+<% end %>
+</ul>
+
+<ul>
+  <%
+    namespaces = {
+        "itemSearch" => "urn:yahoo:jp:itemSearch",
+    }
+  %>
+
+    <% puts "View出力" %>
+<% @items.xpath("//itemSearch:Hit", namespaces).each do |result| %>
+  <table border="1">
+    <colgroup width="100" />
+    <tr>
+      <td><%= result.xpath('.//itemSearch:Name', namespaces).text %></td>
+    </tr>
+  </table>
+<% end %>
+</ul>
+
+#rakuten
+<ul>
+  <%
+    namespaces = {
+      "itemSearch" => "http://api.rakuten.co.jp/rws/rest/ItemSearch/2010-09-15",
+    }
+  %>
+
+    <% puts "View出力" %>
+<% @items.xpath("//itemSearch:ItemSearch/Items/Item", namespaces).each do |result| %>
+  <table border="1">
+    <colgroup width="200" />
+    <colgroup width="300" />
+    <colgroup width="75" />
+    <colgroup width="128" />
+
+    <tr>
+      <td><%= link_to result.xpath('.//itemName').text, result.xpath('.//itemUrl').text %></td>
+      <td><%= result.xpath('.//itemCaption').text %></td>
+      <td><%= result.xpath('.//itemPrice').text %>円</td>
+      <img src="<%= result.xpath('.//mediumImageUrl').text %>" alt="<%= result['itemName'] %>" />
+    </tr>
+  </table>
+<% end %>
+</ul>
