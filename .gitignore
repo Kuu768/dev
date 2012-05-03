@@ -2,7 +2,8 @@
 !/piyo          # 行頭に ! で除外対象としない
 
 #再度除外対象
-/herokuapp  # /herokuapp 以下は除外
+.gitignore
+/herokuapp
 /invest
 /locally
 /refinerycms
