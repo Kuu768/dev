@@ -1,5 +1,0 @@
-de:
-  general:
-    greeting:
-      morning: 'Guten Morgen'
-      hello: 'Guten Tag, %{name}!'
